@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Banking.Application.Command.LoanCommands" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Banking.Application.Command.LoanCommands" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="CreateLoanCommand">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FinishDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GuarantorFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GuarantorLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MonthlyPay" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Relationship" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateLoanCommand" nillable="true" type="tns:CreateLoanCommand" />
+</xs:schema>

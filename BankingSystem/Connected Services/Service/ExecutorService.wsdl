@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ExecutorService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd2" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/Banking.Application.Result" />
+      <xsd:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Banking.Application.Command.DepositCommands" />
+      <xsd:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Banking.Application.Command.LoanCommands" />
+      <xsd:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Banking.Application.Command.UserCommands" />
+      <xsd:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Banking.Domain.UserManagement" />
+      <xsd:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Banking.Shared" />
+      <xsd:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Banking.Domain.BranchManagement" />
+      <xsd:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Banking.Domain.DepositManagement" />
+      <xsd:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Banking.Domain.LoanManagement" />
+      <xsd:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Banking.Domain.RoleManagement" />
+      <xsd:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Banking.Application.Query.UserQueries" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IExecutorService_CreateDeposit_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDeposit" />
+  </wsdl:message>
+  <wsdl:message name="IExecutorService_CreateDeposit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDepositResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExecutorService_CreateLoan_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLoan" />
+  </wsdl:message>
+  <wsdl:message name="IExecutorService_CreateLoan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExecutorService_LoginUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginUser" />
+  </wsdl:message>
+  <wsdl:message name="IExecutorService_LoginUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExecutorService_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="IExecutorService_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExecutorService_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IExecutorService_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExecutorService_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IExecutorService_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExecutorService_QueryUserDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryUserDetails" />
+  </wsdl:message>
+  <wsdl:message name="IExecutorService_QueryUserDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryUserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExecutorService_QueryUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryUsers" />
+  </wsdl:message>
+  <wsdl:message name="IExecutorService_QueryUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExecutorService_GetRoleName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleName" />
+  </wsdl:message>
+  <wsdl:message name="IExecutorService_GetRoleName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleNameResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IExecutorService">
+    <wsdl:operation name="CreateDeposit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExecutorService/CreateDeposit" message="tns:IExecutorService_CreateDeposit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExecutorService/CreateDepositResponse" message="tns:IExecutorService_CreateDeposit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLoan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExecutorService/CreateLoan" message="tns:IExecutorService_CreateLoan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExecutorService/CreateLoanResponse" message="tns:IExecutorService_CreateLoan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExecutorService/LoginUser" message="tns:IExecutorService_LoginUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExecutorService/LoginUserResponse" message="tns:IExecutorService_LoginUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExecutorService/CreateUser" message="tns:IExecutorService_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExecutorService/CreateUserResponse" message="tns:IExecutorService_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExecutorService/UpdateUser" message="tns:IExecutorService_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExecutorService/UpdateUserResponse" message="tns:IExecutorService_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExecutorService/DeleteUser" message="tns:IExecutorService_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExecutorService/DeleteUserResponse" message="tns:IExecutorService_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryUserDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExecutorService/QueryUserDetails" message="tns:IExecutorService_QueryUserDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExecutorService/QueryUserDetailsResponse" message="tns:IExecutorService_QueryUserDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExecutorService/QueryUsers" message="tns:IExecutorService_QueryUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExecutorService/QueryUsersResponse" message="tns:IExecutorService_QueryUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExecutorService/GetRoleName" message="tns:IExecutorService_GetRoleName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExecutorService/GetRoleNameResponse" message="tns:IExecutorService_GetRoleName_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IExecutorService" type="tns:IExecutorService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateDeposit">
+      <soap:operation soapAction="http://tempuri.org/IExecutorService/CreateDeposit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLoan">
+      <soap:operation soapAction="http://tempuri.org/IExecutorService/CreateLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginUser">
+      <soap:operation soapAction="http://tempuri.org/IExecutorService/LoginUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap:operation soapAction="http://tempuri.org/IExecutorService/CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IExecutorService/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IExecutorService/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryUserDetails">
+      <soap:operation soapAction="http://tempuri.org/IExecutorService/QueryUserDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryUsers">
+      <soap:operation soapAction="http://tempuri.org/IExecutorService/QueryUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleName">
+      <soap:operation soapAction="http://tempuri.org/IExecutorService/GetRoleName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExecutorService">
+    <wsdl:port name="BasicHttpBinding_IExecutorService" binding="tns:BasicHttpBinding_IExecutorService">
+      <soap:address location="http://localhost:55727/ExecutorService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

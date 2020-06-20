@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Banking.Application.Command.DepositCommands" />
+  <xs:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/Banking.Application.Result" />
+  <xs:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Banking.Application.Command.LoanCommands" />
+  <xs:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Banking.Application.Command.UserCommands" />
+  <xs:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Banking.Domain.UserManagement" />
+  <xs:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Banking.Application.Query.UserQueries" />
+  <xs:element name="CreateDeposit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Banking.Application.Command.DepositCommands" minOccurs="0" name="command" nillable="true" type="q1:CreateDepositCommand" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDepositResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Banking.Application.Result" minOccurs="0" name="CreateDepositResult" nillable="true" type="q2:CommandResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLoan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Banking.Application.Command.LoanCommands" minOccurs="0" name="command" nillable="true" type="q3:CreateLoanCommand" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLoanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Banking.Application.Result" minOccurs="0" name="CreateLoanResult" nillable="true" type="q4:CommandResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Banking.Application.Command.UserCommands" minOccurs="0" name="command" nillable="true" type="q5:LoginUserCommand" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Banking.Domain.UserManagement" minOccurs="0" name="LoginUserResult" nillable="true" type="q6:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Banking.Application.Command.UserCommands" minOccurs="0" name="command" nillable="true" type="q7:RegisterUserCommand" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Banking.Application.Result" minOccurs="0" name="CreateUserResult" nillable="true" type="q8:CommandResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Banking.Application.Command.UserCommands" minOccurs="0" name="command" nillable="true" type="q9:UpdateUserCommand" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Banking.Application.Result" minOccurs="0" name="UpdateUserResult" nillable="true" type="q10:CommandResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Banking.Application.Command.UserCommands" minOccurs="0" name="command" nillable="true" type="q11:DeleteUserCommand" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Banking.Application.Result" minOccurs="0" name="DeleteUserResult" nillable="true" type="q12:CommandResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryUserDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Banking.Application.Query.UserQueries" minOccurs="0" name="command" nillable="true" type="q13:UserDetailsQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryUserDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Banking.Domain.UserManagement" minOccurs="0" name="QueryUserDetailsResult" nillable="true" type="q14:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Banking.Application.Query.UserQueries" minOccurs="0" name="command" nillable="true" type="q15:UserListQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Banking.Domain.UserManagement" minOccurs="0" name="QueryUsersResult" nillable="true" type="q16:ArrayOfUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRoleNameResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

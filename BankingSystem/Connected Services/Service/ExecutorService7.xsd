@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Banking.Domain.UserManagement" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Banking.Domain.UserManagement" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Banking.Domain.BranchManagement" />
+  <xs:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Banking.Domain.DepositManagement" />
+  <xs:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Banking.Domain.LoanManagement" />
+  <xs:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Banking.Domain.RoleManagement" />
+  <xs:import schemaLocation="http://localhost:55727/ExecutorService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Banking.Shared" />
+  <xs:complexType name="User">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Banking.Shared" base="q1:AggregateRoot">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BirthDay" type="xs:dateTime" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Banking.Domain.BranchManagement" minOccurs="0" name="Branches" nillable="true" type="q2:Branch" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Banking.Domain.DepositManagement" minOccurs="0" name="Deposits" nillable="true" type="q3:ArrayOfDeposit" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gender" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Banking.Domain.LoanManagement" minOccurs="0" name="Loans" nillable="true" type="q4:ArrayOfLoan" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Banking.Domain.RoleManagement" minOccurs="0" name="Role" nillable="true" type="q5:Role" />
+          <xs:element minOccurs="0" name="UniqueNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+</xs:schema>
